@@ -33,7 +33,7 @@ public class autBancointer {
 	}
 
 	@Test
-	void test() throws InterruptedException {
+	void testaberturadeconta() throws InterruptedException {
 		 Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#my-scroll-container > div.sc-1eyyf0l-1.llAUKn.d-flex.align-items-start.align-items-lg-center > div > div > div > div > div > button")).click();   
         Thread.sleep(10000);
