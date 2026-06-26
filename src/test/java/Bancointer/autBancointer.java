@@ -18,7 +18,7 @@ public class autBancointer {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://inter.co/");
+		driver.get("https://nubank.com.br/home2");
 
 	}
 
@@ -30,9 +30,7 @@ public class autBancointer {
 	@Test
 	public void testaberturadeconta() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector(
-				"#my-scroll-container > div.sc-1eyyf0l-1.llAUKn.d-flex.align-items-start.align-items-lg-center > div > div > div > div > div > button"))
-				.click();
+		driver.findElement(By.cssSelector("#my-scroll-container > div.sc-1eyyf0l-1.llAUKn.d-flex.align-items-start.align-items-lg-center > div > div > div > div > div > button")).click();
 		Thread.sleep(10000);
 		String texto = driver.findElement(By.xpath("(//h2)[9]")).getText();
 		assertEquals("Abra agora sua Conta Digital", texto);
@@ -50,13 +48,26 @@ public class autBancointer {
 		Thread.sleep(30000);
 
 	}
-
-	public void testenubank() {
-		driver.get("https://nubank.com.br/");
-		driver.findElement(By.cssSelector("css-zws9hu")).click();
+	@Test
+    public void testenubank() throws InterruptedException {
+        Thread.sleep(7000);
+        driver.findElement(By.xpath("//button[@aria-label='Quero ser Nubank']")).click();
+        Thread.sleep(7000);
+        driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys("Kauê Fernando da Luz");
+        Thread.sleep(7000);
+       driver.findElement(By.id("phone")).sendKeys("77991612324");
+       Thread.sleep(7000);
+       driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("kaue_fernando_daluz@acaoi.com.br");
+       Thread.sleep(7000);
+       driver.findElement(By.id("emailConfirmation")).sendKeys("kaue_fernando_daluz@acaoi.com.br");
+       
+       
+		
+		
 	
 
 		
 		
 	}
 }
+
