@@ -50,6 +50,7 @@ public class autBancointer {
 	}
 	@Test
     public void testenubank() throws InterruptedException {
+		driver.findElement(By.cssSelector("chakra-input__right-element css-1mwqo5p")).sendKeys("18487704050");
         Thread.sleep(7000);
         driver.findElement(By.xpath("//button[@aria-label='Quero ser Nubank']")).click();
         Thread.sleep(7000);
@@ -60,8 +61,8 @@ public class autBancointer {
        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("kaue_fernando_daluz@acaoi.com.br");
        Thread.sleep(7000);
        driver.findElement(By.id("emailConfirmation")).sendKeys("kaue_fernando_daluz@acaoi.com.br");
-       
-       
+       Thread.sleep(7000);
+      driver.findElement(By.cssSelector("true")).click();
 		
 		
 	
